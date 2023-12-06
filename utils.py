@@ -1,7 +1,12 @@
 import random as rand
+import pandas as pd
 
 #Fix the randomness
 rand.seed(1234)
+
+def load_data(input_file):
+    data = pd.read_csv(input_file, header=None)
+    return data
 
 def split_data(input_file, output_file_1, output_file_2, ratio_split=0.2):
     with open(input_file, 'r') as file:
